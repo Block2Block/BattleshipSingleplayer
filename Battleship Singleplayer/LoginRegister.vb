@@ -135,5 +135,45 @@
         End If
     End Sub
 
+    Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
 
+        If login(txtLoginUser.Text, txtLoginPassword.Text) Then
+            MsgBox("You have been successfully logged in.")
+            Me.Close()
+        Else
+            MessageBox.Show("Your username or password was incorrect. Please try again.", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+        End If
+    End Sub
+
+    Private Sub btnRegister_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
+
+        Select Case registerAccount(txtRegisterUsername.Text, txtRegisterPassword.Text, txtRegisterConfirmation.Text, Nothing)
+            Case "NotFilled"
+                MessageBox.Show("You have not filled out all of the required fields.", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            Case "PWNotLongEnough"
+                MessageBox.Show("Your password must be at least 7 characters.", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            Case "PWMeetCriteria"
+                MessageBox.Show("Your password must contain at least 1 number, 1 lowercase and 1 uppercase letter.", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            Case "PWNotMatch"
+                MessageBox.Show("Your password and confirmation password do not match.", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            Case "UNNotAlphaNumeric"
+                MessageBox.Show("Your username must be alphanumeric (most only contain letters or numbers).", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            Case "DBFail"
+                MessageBox.Show("That Username is already taken. Please choose another one.", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
+            Case "?"
+                MessageBox.Show("Apparently I'm an idiot and something went drastically wrong. Even I don't know what happened. Please contact me.", "FATAL", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+            Case Else
+                If MessageBox.Show("Your account has been successfully created. Would you like to log in now?", "Registration Successful!", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) = System.Windows.Forms.DialogResult.Yes Then
+                    If login(txtRegisterUsername.Text, txtRegisterPassword.Text) Then
+                        MsgBox("You have been successfully logged in.")
+                        Me.Close()
+                    Else
+                        MessageBox.Show("There has been a database error. Please try logging in manually.", "FATAL", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1)
+                    End If
+                Else
+                    Me.Close()
+                End If
+        End Select
+
+    End Sub
 End Class
