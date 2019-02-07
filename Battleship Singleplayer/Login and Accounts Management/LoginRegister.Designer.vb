@@ -180,6 +180,7 @@ Partial Class LoginRegister
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange
+        Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(574, 384)
         Me.Controls.Add(Me.btnGotAccount)
         Me.Controls.Add(Me.btnNoAccount)

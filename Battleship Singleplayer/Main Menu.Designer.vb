@@ -29,6 +29,7 @@ Partial Class Main_Menu
         Me.ConfirmationPassword = New System.Windows.Forms.TextBox()
         Me.OUTPUT = New System.Windows.Forms.Label()
         Me.loadBattleshipLogo = New System.Windows.Forms.PictureBox()
+        Me.Button2 = New System.Windows.Forms.Button()
         CType(Me.loadBattleshipLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -88,12 +89,22 @@ Partial Class Main_Menu
         Me.loadBattleshipLogo.TabIndex = 1
         Me.loadBattleshipLogo.TabStop = False
         '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(418, 320)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 3
+        Me.Button2.Text = "Test"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'Main_Menu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.OUTPUT)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.NFCID)
         Me.Controls.Add(Me.ConfirmationPassword)
@@ -115,4 +126,5 @@ Partial Class Main_Menu
     Friend WithEvents NFCID As TextBox
     Friend WithEvents ConfirmationPassword As TextBox
     Friend WithEvents OUTPUT As Label
+    Friend WithEvents Button2 As Button
 End Class

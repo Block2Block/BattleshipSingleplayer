@@ -128,13 +128,13 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Account Management.vb" />
+    <Compile Include="Login and Accounts Management\Account Management.vb" />
     <Compile Include="ApplicationEvents.vb" />
-    <Compile Include="Database Management.vb" />
-    <Compile Include="LoginRegister.Designer.vb">
+    <Compile Include="Login and Accounts Management\Database Management.vb" />
+    <Compile Include="Login and Accounts Management\LoginRegister.Designer.vb">
       <DependentUpon>LoginRegister.vb</DependentUpon>
     </Compile>
-    <Compile Include="LoginRegister.vb">
+    <Compile Include="Login and Accounts Management\LoginRegister.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Main Menu.Designer.vb">
@@ -143,8 +143,15 @@
     <Compile Include="Main Menu.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Player Data.vb" />
-    <Compile Include="SHA.vb" />
+    <Compile Include="Options Management\Options.vb" />
+    <Compile Include="Login and Accounts Management\Player Data.vb" />
+    <Compile Include="Login and Accounts Management\SHA.vb" />
+    <Compile Include="Options Management\OptionsMenu.Designer.vb">
+      <DependentUpon>OptionsMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Options Management\OptionsMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Splash Screen.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -169,11 +176,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="LoginRegister.resx">
+    <EmbeddedResource Include="Login and Accounts Management\LoginRegister.resx">
       <DependentUpon>LoginRegister.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main Menu.resx">
       <DependentUpon>Main Menu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Options Management\OptionsMenu.resx">
+      <DependentUpon>OptionsMenu.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Splash Screen.resx">
       <DependentUpon>Splash Screen.vb</DependentUpon>
@@ -215,6 +225,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cooltext314369820897921.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cooltext314486333794288.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

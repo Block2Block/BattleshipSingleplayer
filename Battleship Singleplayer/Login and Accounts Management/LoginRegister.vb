@@ -176,4 +176,31 @@
         End Select
 
     End Sub
+
+    Private Sub LoginRegister_GotFocus(sender As Object, e As EventArgs) Handles MyBase.GotFocus
+        'If the dark mode option has been enabled.
+        If optionDarkMode Then
+            'Change the background colour.
+            BackColor = Color.FromArgb(255, 45, 45, 45)
+
+            'Change the text colour.
+            lblExplanation.ForeColor = Color.FromArgb(255, 255, 255, 255)
+            lblLogin.ForeColor = Color.FromArgb(255, 255, 255, 255)
+            lblRegister.ForeColor = Color.FromArgb(255, 255, 255, 255)
+
+            'Change the text box text colours.
+            txtLoginPassword.ForeColor = Color.FromArgb(255, 255, 255, 255)
+            txtLoginUser.ForeColor = Color.FromArgb(255, 255, 255, 255)
+            txtRegisterUsername.ForeColor = Color.FromArgb(255, 255, 255, 255)
+            txtRegisterPassword.ForeColor = Color.FromArgb(255, 255, 255, 255)
+            txtRegisterConfirmation.ForeColor = Color.FromArgb(255, 255, 255, 255)
+
+            'Change the text box background colour.
+            txtLoginPassword.BackColor = Color.FromArgb(255, 90, 90, 90)
+            txtLoginUser.BackColor = Color.FromArgb(255, 90, 90, 90)
+            txtRegisterUsername.BackColor = Color.FromArgb(255, 90, 90, 90)
+            txtRegisterPassword.BackColor = Color.FromArgb(255, 90, 90, 90)
+            txtRegisterConfirmation.BackColor = Color.FromArgb(255, 90, 90, 90)
+        End If
+    End Sub
 End Class
