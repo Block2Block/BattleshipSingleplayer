@@ -35,6 +35,7 @@ Partial Class LoginRegister
         Me.btnRegister = New System.Windows.Forms.Button()
         Me.btnNoAccount = New System.Windows.Forms.Button()
         Me.btnGotAccount = New System.Windows.Forms.Button()
+        Me.btnClose = New System.Windows.Forms.Button()
         CType(Me.imgLoginTitle, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -175,13 +176,25 @@ Partial Class LoginRegister
         Me.btnGotAccount.UseVisualStyleBackColor = True
         Me.btnGotAccount.Visible = False
         '
+        'btnClose
+        '
+        Me.btnClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClose.Location = New System.Drawing.Point(257, 378)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.Size = New System.Drawing.Size(60, 29)
+        Me.btnClose.TabIndex = 9
+        Me.btnClose.Text = "Close"
+        Me.btnClose.UseVisualStyleBackColor = True
+        Me.btnClose.Visible = False
+        '
         'LoginRegister
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(574, 384)
+        Me.ClientSize = New System.Drawing.Size(574, 419)
+        Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.btnGotAccount)
         Me.Controls.Add(Me.btnNoAccount)
         Me.Controls.Add(Me.btnRegister)
@@ -222,4 +235,5 @@ Partial Class LoginRegister
     Friend WithEvents btnRegister As Button
     Friend WithEvents btnNoAccount As Button
     Friend WithEvents btnGotAccount As Button
+    Friend WithEvents btnClose As Button
 End Class

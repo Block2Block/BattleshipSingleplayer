@@ -26,7 +26,7 @@ Partial Class OptionsMenu
         Me.lblOptionsExplanation = New System.Windows.Forms.Label()
         Me.lblGraphicsOptions = New System.Windows.Forms.Label()
         Me.btnDarkMode = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblGameOptions = New System.Windows.Forms.Label()
         Me.btnAILevel = New System.Windows.Forms.Button()
         Me.tbrVolume = New System.Windows.Forms.TrackBar()
         Me.lblVolume = New System.Windows.Forms.Label()
@@ -78,16 +78,16 @@ Partial Class OptionsMenu
         Me.btnDarkMode.Text = "Dark Mode: Disabled"
         Me.btnDarkMode.UseVisualStyleBackColor = True
         '
-        'Label1
+        'lblGameOptions
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(97, 252)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(124, 20)
-        Me.Label1.TabIndex = 3
-        Me.Label1.Text = "Game Options"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.lblGameOptions.AutoSize = True
+        Me.lblGameOptions.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblGameOptions.Location = New System.Drawing.Point(97, 252)
+        Me.lblGameOptions.Name = "lblGameOptions"
+        Me.lblGameOptions.Size = New System.Drawing.Size(124, 20)
+        Me.lblGameOptions.TabIndex = 3
+        Me.lblGameOptions.Text = "Game Options"
+        Me.lblGameOptions.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'btnAILevel
         '
@@ -149,7 +149,7 @@ Partial Class OptionsMenu
         Me.ClientSize = New System.Drawing.Size(318, 486)
         Me.Controls.Add(Me.tbrVolume)
         Me.Controls.Add(Me.lblVolume)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.lblGameOptions)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.btnLevelOpt)
         Me.Controls.Add(Me.btnAILevel)
@@ -177,7 +177,7 @@ Partial Class OptionsMenu
     Friend WithEvents lblOptionsExplanation As Label
     Friend WithEvents lblGraphicsOptions As Label
     Friend WithEvents btnDarkMode As Button
-    Friend WithEvents Label1 As Label
+    Friend WithEvents lblGameOptions As Label
     Friend WithEvents btnAILevel As Button
     Friend WithEvents tbrVolume As TrackBar
     Friend WithEvents lblVolume As Label
