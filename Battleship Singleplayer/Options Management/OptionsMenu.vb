@@ -51,6 +51,14 @@ Public Class OptionsMenu
         If Not optionLevelOpt Then
             btnLevelOpt.Text = "Level Opt: Off"
         End If
+
+        If Not dbEnabled Or playerUsername Is Nothing Then
+            btnLevelOpt.Enabled = False
+        End If
+
+        If levelUnlocked() = 0 And dbEnabled And Not playerUsername Is Nothing Then
+            btnAILevel.Enabled = False
+        End If
     End Sub
 
     Private Sub OptionsMenu_Activated(sender As Object, e As EventArgs) Handles Me.Activated
@@ -141,14 +149,28 @@ Public Class OptionsMenu
         'Depending on the value of optionAILevel, change the AI level in a cycle.
         Select Case optionAILevel
             Case "Easy"
-                optionAILevel = "Normal"
-                btnAILevel.Text = "AI Level: Normal"
+                If levelUnlocked() >= 1 Then
+                    optionAILevel = "Normal"
+                    btnAILevel.Text = "AI Level: Normal"
+                Else
+                    MessageBox.Show("You have not unlocked AI levels yet. The first AI level is unlocked at level 10. Play more games to level up!", "Not unlocked!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
+                End If
             Case "Normal"
-                optionAILevel = "Hard"
-                btnAILevel.Text = "AI Level: Hard"
+                If levelUnlocked() >= 2 Then
+                    optionAILevel = "Hard"
+                    btnAILevel.Text = "AI Level: Hard"
+                Else
+                    optionAILevel = "Easy"
+                    btnAILevel.Text = "AI Level: Easy"
+                End If
             Case "Hard"
-                optionAILevel = "Impossible"
-                btnAILevel.Text = "AI Level: Impossible"
+                If levelUnlocked() >= 3 Then
+                    optionAILevel = "Impossible"
+                    btnAILevel.Text = "AI Level: Impossible"
+                Else
+                    optionAILevel = "Easy"
+                    btnAILevel.Text = "AI Level: Easy"
+                End If
             Case "Impossible"
                 optionAILevel = "Easy"
                 btnAILevel.Text = "AI Level: Easy"

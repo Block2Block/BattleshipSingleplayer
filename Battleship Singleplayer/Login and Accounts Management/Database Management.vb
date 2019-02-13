@@ -1,5 +1,4 @@
-﻿Imports MySql.Data
-Imports MySql.Data.MySqlClient
+﻿Imports MySql.Data.MySqlClient
 
 Public Module Database_Management
 
@@ -143,6 +142,26 @@ Public Module Database_Management
             If level Then
                 updateQuery = New MySqlCommand("UPDATE `player_data` SET XP = XP + " & xp & ", Level = Level + 1 WHERE UserID = " & playerUserID, dbConnection)
             End If
+
+            'Inserts the new xp and level to the database.
+            Dim updateDataAdapter As New MySqlDataAdapter(updateQuery)
+
+            'Dataset to be populated when the query has been executed
+            Dim updateDataSet As New DataSet
+            'Clears the datatable ready to be populated.
+            updateDataSet.Clear()
+
+            'Fills the datatable with the information retrieved information from the executed query
+            updateDataAdapter.Fill(updateDataSet, "player_data")
+        Catch ex As Exception
+            Throw New Exception("Unable to make a successful query to the database.")
+        End Try
+    End Sub
+
+    Public Sub updateLevel(ByVal level As Byte)
+        Try
+            'Inserts the new level to the database.
+            Dim updateQuery As New MySqlCommand("UPDATE `player_data` SET Level = " & level & " WHERE UserID = " & playerUserID, dbConnection)
 
             'Inserts the new xp and level to the database.
             Dim updateDataAdapter As New MySqlDataAdapter(updateQuery)

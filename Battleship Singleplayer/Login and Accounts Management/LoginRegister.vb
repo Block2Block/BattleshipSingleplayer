@@ -138,7 +138,6 @@ Public Class LoginRegister
     End Sub
 
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
-
         If login(txtLoginUser.Text, txtLoginPassword.Text) Then
             MsgBox("You have been successfully logged in.")
             Me.Close()

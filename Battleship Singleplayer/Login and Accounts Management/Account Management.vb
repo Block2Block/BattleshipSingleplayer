@@ -40,10 +40,13 @@ Module Account_Management
     'This subroutine was for use when logging in.
     Public Sub updateGameVariables(ByVal variableXP As Long, ByVal variableGamesPlayed As Int16, ByVal variableLevel As Int16, ByVal variableWins As Int16)
         'Updates variables in the Player_Data module with the varables supplied.
+
         playerXP = variableXP
         playerLevel = variableLevel
         playerGamesPlayed = variableGamesPlayed
         playerWins = variableGamesPlayed
+
+        calculateLevel(True, variableXP)
 
         'Once visual elements have been finished, I will implement these into this subroutine.
     End Sub

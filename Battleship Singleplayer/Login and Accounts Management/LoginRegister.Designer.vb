@@ -185,7 +185,6 @@ Partial Class LoginRegister
         Me.btnClose.TabIndex = 9
         Me.btnClose.Text = "Close"
         Me.btnClose.UseVisualStyleBackColor = True
-        Me.btnClose.Visible = False
         '
         'LoginRegister
         '
