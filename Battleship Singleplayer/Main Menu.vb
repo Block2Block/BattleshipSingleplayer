@@ -88,12 +88,17 @@ Public Class Main_Menu
     End Sub
 
     Private Sub btnPlay_Click(sender As Object, e As EventArgs) Handles btnPlay.Click
-        'TODO: Open play menu.
-        MsgBox(XP_Management.giveXP(True))
+        'Open the player space selection form.
+        My.Forms.Player_Space_Selection.Show()
+
+        'Closing forms that shouldn't be used when playing the game.
+        My.Forms.OptionsMenu.Close()
+        My.Forms.LoginRegister.Close()
     End Sub
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         'Ends the program.
+        Database_Management.dbConnection.Close()
         End
     End Sub
 End Class
